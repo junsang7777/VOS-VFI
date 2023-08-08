@@ -1,0 +1,301 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	
+	h1 {
+		font-size:32px;
+		font-weight:300;
+	}
+	
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		15px 15px 0 0px #fff, /* The fourth layer */
+		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		20px 20px 0 0px #fff, /* The fifth layer */
+		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		25px 25px 0 0px #fff, /* The fifth layer */
+		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+
+<html>
+<head>
+
+	<title>RefQSR</title>
+	<meta property="og:image" content="./resources/overview.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="RefQSR: Reference-based Quantization for Image Super-Resolution Networks" />
+	<meta property="og:description" content="Paper description." />
+
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script> 
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>   
+	<br>
+	<center>
+		<span style="font-size:36px">RefQSR: Reference-based Quantization for Image <br> Super-Resolution Networks<br>  </span>
+		<table align=center width=900px>
+			<table align=center width=900px>
+				<tr>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href=".">Hongjae Lee</a><sup>*</sup>,</span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href=".">Jun-Sang Yoo</a>,</span>
+						</center>
+					</td><td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href=".">Seung-Won Jung</a><sup>†</sup>,</span>
+						</center>
+					</td>
+				</tr>
+			</table>
+
+			<table align=center width=800px>
+				<tr>
+					<td align=center width=150px>
+						<center>
+							<span style="font-size:20px">Korea University</a></span>
+						</center>
+					</td>
+				</tr>
+				<tr>
+					<td align=center width=150px>
+						<center>
+							<small><sup>†</sup>Corresponding author </small>
+						</center>
+					</td>
+				</tr>
+			</table>   
+
+	<center>
+		<table align=center width=850px>			
+			<tr>
+				<td width=850px>
+					<center>
+						<img class="round" style="width:850px" src="./Source/fig2.png"/>
+					</center>
+					</center>
+						Examples of patch-wise bit selections of (b) CADyQ and (c) CADyQ-RefQSR for the SRResNet baseline, where the darker the patches, the higher the average bit precision. Note that CADyQ allocates higher bit precision to many patches with textual details, whereas CADyQ-RefQSR utilizes image self-similarity to prevent assigning high-bit precision to similar patches. <br><br>
+				</td>
+			</tr>
+		</table>
+	</center>
+
+	<hr>
+	
+	<table align=center width=850px>
+		<center><h1>Qualitative Results</h1></center>
+
+		<table align=center width=420px></table>
+		<tr>
+			<td align=center width=850px>
+				<center>
+					<td><img class="round" style="width:850px" src="./resources/comparison_other.png"/></td>
+				</center>
+			</td>
+		</tr>
+		</table>
+		<table align=center width=850px>
+			<center>
+				<tr>
+					<td>
+						 Visual comparison of DDTB and DDTB-RefQSR on SRResNet.
+					</td>
+				</tr>
+			</center>
+		</table>
+	
+	        <table align=center width=420px></table>
+		<tr>
+			<td align=center width=850px>
+				<center>
+					<td><img class="round" style="width:850px" src="./resources/comparison_other.png"/></td>
+				</center>
+			</td>
+		</tr>
+		</table>
+		<table align=center width=850px>
+			<center>
+				<tr>
+					<td>
+						 Visual comparison of CADyQ and CADyQ-RefQSR on SRResNet.
+					</td>
+				</tr>
+			</center>
+		</table>
+
+	<hr>
+
+	<table align=center width=850px>
+		<center><h1>Quantitative Results</h1></center>
+
+		<table align=center width=420px></table>
+		<tr>
+			<td align=center width=850px>
+				<center>
+					<td><img class="round" style="width:850px" src="./resources/comparison_other.png"/></td>
+				</center>
+			</td>
+		</tr>
+		</table>
+		<table align=center width=850px>
+			<center>
+				<tr>
+					<td>
+						 Quantitative comparisons of various quantization methods on SRResNet for scale factor of 2.
+					</td>
+				</tr>
+			</center>
+		</table>
+	
+	        <table align=center width=420px></table>
+		<tr>
+			<td align=center width=850px>
+				<center>
+					<td><img class="round" style="width:850px" src="./resources/comparison_other.png"/></td>
+				</center>
+			</td>
+		</tr>
+		</table>
+		<table align=center width=850px>
+			<center>
+				<tr>
+					<td>
+						 Quantitative comparisons of various quantization methods on CARN for scale factor of 2.
+					</td>
+				</tr>
+			</center>
+		</table>
+
+	<hr>
+
+			
+	<table align=center width=900px>
+		<tr>
+			<td width=400px>
+				<left>
+					<center><h1>Acknowledgements</h1></center>
+
+					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
+
+				</left>
+			</td>
+		</tr>
+	</table>
+
+<br>
+</body>
+</html>
+
