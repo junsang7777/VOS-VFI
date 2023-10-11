@@ -80,3 +80,4 @@ Video frame interpolation (VFI) is a very active research topic due to its broad
       
 ## Acknowledgements
 This code is based on [HyeongminLee/AdaCoF-pytorch](https://github.com/HyeongminLEE/AdaCoF-pytorch)
+Thanks to off-the-shelf VOS model, [STCN](https://github.com/hkchengrex/STCN)
