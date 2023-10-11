@@ -25,21 +25,19 @@ Video frame interpolation (VFI) is a very active research topic due to its broad
 3. Unzip (test_input, test_video_davis, VOS(STCN) pretrained model, Our Pretrained model)
 
 > VOS-VFI
->      > cupy_module
->      > losses
->      > model
->      > models
->      > saves ( for STCN, VOS model's pre-trained model )
->      > test_input ( for VFI test )
->      > test_video_davis ( for VOS test)
->      > util
->      > ada-VOS_pretrained.pth
->      > dataloader_seg.py
->      > evaluation.py
->      > ...etc .py
+>	> cupy_module
+>	> losses
+>	> model
+>	> models
+>	> saves ( for STCN, VOS model's pre-trained model )
+>	> test_input ( for VFI test )
+>	> test_video_davis ( for VOS test)
+>	> util
+>	> ada-VOS_pretrained.pth
+>	> dataloader_seg.py
+>	> evaluation.py
+>	> ...etc .py
 
-> This is a first blockqute.
->	> This is a second blockqute.
 
 ### Begin to train
 1. Run train.py with following command.
