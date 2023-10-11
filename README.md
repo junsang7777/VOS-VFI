@@ -22,8 +22,8 @@ Video frame interpolation (VFI) is a very active research topic due to its broad
 ### Prepare training data
 1. Download Vimeo90k trainind data from [vimeo triplet dataset](http://toflow.csail.mit.edu/).
 2. Using Vimeo90k dataset & precompute_mask.py, generate Object Segmentation Mask.
-3. Download STCN [pretrained model](https://github.com/hkchengrex/STCN/releases/tag/1.0) in saves
-4. Download [test_video_davis](https://davischallenge.org/davis2016/code.html). DAVIS 2016 dataset for VOS.
+3. Download STCN [pretrained model](https://github.com/hkchengrex/STCN/releases/tag/1.0) in saves and [AdaCoF-VOS](https://drive.google.com/file/d/12K4XEF1_D_ESASSo5PEcEcZkz1C4hEFe/view?usp=drive_link) our pretrain model.
+4. Download [test_video_davis](https://davischallenge.org/davis2016/code.html). DAVIS 2016 dataset for VOS (We used 480p JPEG images).
 
 > VOS-VFI
 >	> cupy_module  
