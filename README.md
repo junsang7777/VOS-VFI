@@ -34,9 +34,9 @@ Video frame interpolation (VFI) is a very active research topic due to its broad
 1. The Evaluation part is same as existing VFI models.
 2. For evaluation, you need the checkpoint file.
 3. Run evaluation.py with following command.
-'''
+   ```
       python evaluation.py --out_dir [output_dir] --checkpoint [checkpoint_dir] --config [configuration_dir]
-'''
+   ```
 
 
 ### Video Interpolation
@@ -45,9 +45,10 @@ Video frame interpolation (VFI) is a very active research topic due to its broad
 
 ### Two-frame interpolation 
 1. To interpolate a frame between arbitary two fraems you have, run interpolte_twoframe.py with following command.
-'''
-  python interpolate_twoframe.py --first_frame [first_frame] --second_frame [second_frame] --output_frame [output_frame] --checkpoint [checkpoint_dir] --config [configuration_dir]
-'''
+   ```
+   python interpolate_twoframe.py --first_frame [first_frame] --second_frame [second_frame] --output_frame [output_frame] --checkpoint [checkpoint_dir] --config [configuration_dir]
+   ```
+
 
 ## Citation
 
