@@ -52,14 +52,14 @@ Video frame interpolation (VFI) is a very active research topic due to its broad
 
 ## Citation
       
-        @InProceedings{Yoo_2023_ICCV,
-          author    = {Yoo, Jun-Sang and Lee, Hongjae and Jung, Seung-Won},
-          title     = {Video Object Segmentation-aware Video Frame Interpolation},
-          booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-          month     = {October},
-          year      = {2023},
-          pages     = {12322-12333}
-        }
+      @InProceedings{Yoo_2023_ICCV,
+      author    = {Yoo, Jun-Sang and Lee, Hongjae and Jung, Seung-Won},
+      title     = {Video Object Segmentation-aware Video Frame Interpolation},
+      booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+      month     = {October},
+      year      = {2023},
+      pages     = {12322-12333}
+      }
       
 ## Acknowledgements
 This code is based on [HyeongminLee/AdaCoF-pytorch](https://github.com/HyeongminLEE/AdaCoF-pytorch)
