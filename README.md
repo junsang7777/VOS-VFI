@@ -25,8 +25,8 @@ Video frame interpolation (VFI) is a very active research topic due to its broad
 
 ### Begin to train
 1. Run train.py with following command.
-   python train.py --train [dir_to_vimeo_triplet] --out_dir [dir_to_output_folder]
-2. You might have to change many other options (epochs, learning rate, hyper parameters, etc.)
+      python train.py --train [dir_to_vimeo_triplet] --out_dir [dir_to_output_folder]
+3. You might have to change many other options (epochs, learning rate, hyper parameters, etc.)
 
 ## Test
 
@@ -34,7 +34,7 @@ Video frame interpolation (VFI) is a very active research topic due to its broad
 1. The Evaluation part is same as existing VFI models.
 2. For evaluation, you need the checkpoint file.
 3. Run evaluation.py with following command.
-   python evaluation.py --out_dir [output_dir] --checkpoint [checkpoint_dir] --config [configuration_dir]
+      python evaluation.py --out_dir [output_dir] --checkpoint [checkpoint_dir] --config [configuration_dir]
 
 ### Video Interpolation
 1. To interpolate and evaluate video datasets, Run interpolate_video_folder+accuracy_example.py
