@@ -17,6 +17,7 @@ Video frame interpolation (VFI) is a very active research topic due to its broad
 + pyiqa (for metrics)
 
 
+A more organized version will be updated later.
 ## Train
 
 ### Prepare training data
